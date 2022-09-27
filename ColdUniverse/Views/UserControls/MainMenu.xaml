@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="ColdUniverse.Views.UserControls.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ColdUniverse.Views.UserControls"
+             mc:Ignorable="d" 
+             d:Height="1080"
+             d:Width="1960">
+    <Grid Background="#fff">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.9*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button IsEnabled="False"
+                    Margin="7"
+                    Grid.Column="1"
+                    Grid.Row="1">
+                <Button.Content>
+                    <Viewbox Margin="10">
+                        <TextBlock Text="Играть"
+                                   FontFamily="Proxima Nova"/>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+            <Button Margin="7"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Command="{Binding UpdateViewCommand}"
+                    CommandParameter="WorldCreation">
+                <Button.Content>
+                    <Viewbox Margin="10">
+                        <TextBlock Text="Создать мир"
+                                   FontFamily="Proxima Nova"/>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+            <Button Margin="7"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Command="{Binding UpdateViewCommand}"
+                    CommandParameter="Settings">
+                <Button.Content>
+                    <Viewbox Margin="10">
+                        <TextBlock Text="Опции"
+                                   FontFamily="Proxima Nova"/>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+            <Button Grid.Row="4"
+                    Margin="7"
+                    Grid.Column="1">
+                <Button.Content>
+                    <Viewbox Margin="10">
+                        <TextBlock Text="Выйти"
+                                   FontFamily="Proxima Nova"/>
+                    </Viewbox>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>
