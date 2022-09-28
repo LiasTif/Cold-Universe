@@ -1,5 +1,6 @@
 ﻿using ColdUniverse.Commands;
 using System.Windows.Input;
+using ColdUniverse.ViewModels.UserControls;
 
 namespace ColdUniverse.ViewModels.Windows
 {
@@ -9,10 +10,16 @@ namespace ColdUniverse.ViewModels.Windows
 
         public BaseViewModel CurrentUserControl
         {
-            get { return _currentUserControl; }
-            set { _currentUserControl = value; }
+            get => _currentUserControl;
+            set
+            {
+                if (_currentUserControl != value)
+                {
+                    _currentUserControl = value;
+                    OnPropertyChanged(nameof(CurrentUserControl));
+                }
+            }
         }
-
 
         public ICommand UpdateViewCommand { get; set; }
 
