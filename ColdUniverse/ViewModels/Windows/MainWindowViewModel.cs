@@ -13,6 +13,7 @@ namespace ColdUniverse.ViewModels.Windows
             set { _currentUserControl = value; }
         }
 
+
         public ICommand UpdateViewCommand { get; set; }
 
         public MainWindowViewModel()

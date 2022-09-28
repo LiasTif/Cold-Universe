@@ -70,7 +70,8 @@
             </Button>
             <Button Grid.Row="4"
                     Margin="7"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Command="{Binding AppExit}">
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Выйти"
