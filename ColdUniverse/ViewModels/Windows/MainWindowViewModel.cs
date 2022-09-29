@@ -21,11 +21,13 @@ namespace ColdUniverse.ViewModels.Windows
             }
         }
 
+        public ICommand AppExit { get; set; }
         public ICommand UpdateViewCommand { get; set; }
 
         public MainWindowViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
+            AppExit = new AppExitCommand();
         }
     }
 }
