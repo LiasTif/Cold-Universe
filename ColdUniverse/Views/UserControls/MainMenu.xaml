@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewmodels="clr-namespace:ColdUniverse.ViewModels.UserControls"
-             xmlns:viewmodelswindows="clr-namespace:ColdUniverse.ViewModels.Windows"
+             xmlns:viewmodelswin="clr-namespace:ColdUniverse.ViewModels.Windows"
              mc:Ignorable="d" 
              d:Height="1080"
              d:Width="1960">
@@ -34,7 +33,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.DataContext>
-                <viewmodelswindows:MainWindowViewModel/>
+                <viewmodelswin:MainWindowViewModel/>
             </Grid.DataContext>
 
             <Button IsEnabled="False"
