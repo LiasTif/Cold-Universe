@@ -1,14 +1,15 @@
 ﻿using ColdUniverse.Commands;
 using System.Windows.Input;
-using ColdUniverse.ViewModels.UserControls;
+using System.Windows.Controls;
+using ColdUniverse.Views.UserControls;
 
 namespace ColdUniverse.ViewModels.Windows
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        private BaseViewModel _currentUserControl;
+        private UserControl _currentUserControl = new MainMenu();
 
-        public BaseViewModel CurrentUserControl
+        public UserControl CurrentUserControl
         {
             get => _currentUserControl;
             set
@@ -16,7 +17,7 @@ namespace ColdUniverse.ViewModels.Windows
                 if (_currentUserControl != value)
                 {
                     _currentUserControl = value;
-                    OnPropertyChanged(nameof(CurrentUserControl));
+                    this.OnPropertyChanged("CurrentUserControl");
                 }
             }
         }
@@ -26,7 +27,6 @@ namespace ColdUniverse.ViewModels.Windows
 
         public MainWindowViewModel()
         {
-            CurrentUserControl = new MainMenuViewModel();
             UpdateViewCommand = new UpdateViewCommand(this);
             AppExit = new AppExitCommand();
         }

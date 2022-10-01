@@ -32,9 +32,6 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.DataContext>
-                <viewmodelswin:MainWindowViewModel/>
-            </Grid.DataContext>
 
             <Button IsEnabled="False"
                     Margin="7"
