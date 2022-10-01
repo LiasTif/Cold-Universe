@@ -12,7 +12,6 @@ namespace ColdUniverse.Views.UserControls
         public MainMenu()
         {
             InitializeComponent();
-            DataContext = new MainMenuViewModel();
         }
     }
 }
