@@ -69,6 +69,7 @@
     </Page>
     <Compile Include="Commands\AppExitCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Interfaces\UpdateView.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\UserControls\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\UserControls\SettingsViewModel.cs" />

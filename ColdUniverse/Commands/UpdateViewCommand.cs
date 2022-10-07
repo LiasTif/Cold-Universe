@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
+using ColdUniverse.ViewModels.UserControls;
 using ColdUniverse.ViewModels.Windows;
-using ColdUniverse.Views.UserControls;
 
 namespace ColdUniverse.Commands
 {
@@ -25,11 +25,11 @@ namespace ColdUniverse.Commands
         {
             if (parameter.ToString() == "Menu")
             {
-                viewModel.CurrentUserControl = new MainMenu();
+                viewModel.CurrentUserControl = new MainMenuViewModel();
             }
             else if (parameter.ToString() == "Settings")
             {
-                viewModel.CurrentUserControl = new Settings();
+                viewModel.CurrentUserControl = new SettingsViewModel();
             }
             //else if (parameter.ToString() == "WorldCreation")
             //{

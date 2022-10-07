@@ -1,6 +1,5 @@
 ﻿using ColdUniverse.ViewModels.UserControls;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace ColdUniverse.Views.UserControls
 {
@@ -12,6 +11,7 @@ namespace ColdUniverse.Views.UserControls
         public MainMenu()
         {
             InitializeComponent();
+            //DataContext = new MainMenuViewModel();
         }
     }
 }

@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewmodelswin="clr-namespace:ColdUniverse.ViewModels.Windows"
-             d:DataContext="{d:DesignInstance Type=viewmodelswin:MainWindowViewModel}"
              mc:Ignorable="d" 
              d:Height="1080"
              d:Width="1960">
@@ -60,7 +59,8 @@
             <Button Margin="7"
                     Grid.Row="3"
                     Grid.Column="1"
-                    Command="{Binding UpdateViewCommand}"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+                        Path=(viewmodelswin:MainWindowViewModel.UpdateViewCommand)}"
                     CommandParameter="Settings">
                 <Button.Content>
                     <Viewbox Margin="10">

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ColdUniverse.ViewModels.UserControls;
 using ColdUniverse.ViewModels.Windows;
 
 namespace ColdUniverse
