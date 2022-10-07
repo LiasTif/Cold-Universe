@@ -7,7 +7,7 @@ namespace ColdUniverse.ViewModels.Windows
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        private UserControl _currentUserControl = new MainMenu();
+        private BaseViewModel _currentUserControl = new MainMenuViewModel();
 
         public UserControl CurrentUserControl
         {
