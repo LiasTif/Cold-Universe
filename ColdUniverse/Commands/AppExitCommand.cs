@@ -1,19 +1,10 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
+﻿using System.Windows;
 
 namespace ColdUniverse.Commands
 {
-    public class AppExitCommand : ICommand
+    public class AppExitCommand : CommandBase
     {
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             Application.Current.Shutdown();
         }

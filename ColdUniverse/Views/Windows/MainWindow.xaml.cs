@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using ColdUniverse.ViewModels.UserControls;
-using ColdUniverse.ViewModels.Windows;
 
 namespace ColdUniverse
 {
@@ -12,7 +10,6 @@ namespace ColdUniverse
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
         }
     }
 }

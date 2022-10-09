@@ -12,8 +12,7 @@
                  VerticalAlignment="Center"
                  MaxHeight="100">
             <Button Content="В меню"
-                    Command="{Binding UpdateViewCommand}"
-                    CommandParameter="Menu"/>
+                    Command="{Binding NavigateMenuCommand}"/>
         </Viewbox>
 
     </Grid>

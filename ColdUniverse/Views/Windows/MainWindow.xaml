@@ -3,11 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:ColdUniverse.ViewModels.UserControls"
+        xmlns:usercontrols="clr-namespace:ColdUniverse.Views.UserControls"
         mc:Ignorable="d"
         Title="ColdUniverse"
         d:Height="1080"
         d:Width="1960"
         MinHeight="560"
         MinWidth="1060">
-    <ContentControl Content="{Binding CurrentUserControl, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:MainMenuViewModel}">
+                <usercontrols:MainMenu/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
+                <usercontrols:Settings/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
 </Window>

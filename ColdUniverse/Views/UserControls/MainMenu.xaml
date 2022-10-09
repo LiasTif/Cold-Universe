@@ -7,9 +7,6 @@
              mc:Ignorable="d" 
              d:Height="1080"
              d:Width="1960">
-    <UserControl.DataContext>
-        <viewmodelswin:MainWindowViewModel/>
-    </UserControl.DataContext>
     <Grid Background="#fff">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.9*"/>
@@ -49,9 +46,9 @@
             </Button>
             <Button Margin="7"
                     Grid.Row="2"
-                    Grid.Column="1"
-                    Command="{Binding UpdateViewCommand}"
-                    CommandParameter="WorldCreation">
+                    Grid.Column="1">
+                <!-- Command="{Binding UpdateViewCommand}"
+                    CommandParameter="WorldCreation" -->
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Создать мир"
@@ -62,7 +59,7 @@
             <Button Margin="7"
                     Grid.Row="3"
                     Grid.Column="1"
-                    Command="{Binding UpdateViewCommand}"
+                    Command="{Binding NavigateSettingsCommand}"
                     CommandParameter="Settings">
                 <Button.Content>
                     <Viewbox Margin="10">
@@ -74,7 +71,7 @@
             <Button Grid.Row="4"
                     Margin="7"
                     Grid.Column="1"
-                    Command="{Binding AppExit}">
+                    Command="{Binding AppExitCommand}">
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Выйти"

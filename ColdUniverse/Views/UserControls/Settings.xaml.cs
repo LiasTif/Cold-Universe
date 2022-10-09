@@ -1,5 +1,4 @@
-﻿using ColdUniverse.ViewModels.UserControls;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace ColdUniverse.Views.UserControls
 {
@@ -11,7 +10,6 @@ namespace ColdUniverse.Views.UserControls
         public Settings()
         {
             InitializeComponent();
-            DataContext = new SettingsViewModel();
         }
     }
 }

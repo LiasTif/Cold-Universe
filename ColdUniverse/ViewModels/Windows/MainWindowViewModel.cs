@@ -1,39 +1,23 @@
-﻿using ColdUniverse.Commands;
-using System.Windows.Input;
-using ColdUniverse.ViewModels.UserControls;
+﻿using ColdUniverse.Stores;
 
 namespace ColdUniverse.ViewModels.Windows
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        private BaseViewModel _currentUserControl;
+        private readonly NavigationStore _navigationStore;
 
-        public BaseViewModel CurrentUserControl
+        public BaseViewModel CurrentViewModel => _navigationStore.CurrentViewModel;
+
+        public MainWindowViewModel(NavigationStore navigationStore)
         {
-            get => _currentUserControl;
-            set
-            {
-                if (_currentUserControl != value)
-                {
-                    _currentUserControl = value;
-                    this.OnPropertyChanged("CurrentUserControl");
-                }
-            }
+            _navigationStore = navigationStore;
+
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        public void SetSettingsVM()
+        private void OnCurrentViewModelChanged()
         {
-            CurrentUserControl = new SettingsViewModel();
-        }
-
-        public ICommand AppExit { get; set; }
-        public ICommand UpdateViewCommand { get; set; }
-
-        public MainWindowViewModel()
-        {
-            CurrentUserControl = new MainMenuViewModel();
-            UpdateViewCommand = new UpdateViewCommand(this);
-            AppExit = new AppExitCommand();
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }
