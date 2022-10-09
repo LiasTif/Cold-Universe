@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:Height="1080"
              d:Width="1960">
+    <UserControl.DataContext>
+        <viewmodelswin:MainWindowViewModel/>
+    </UserControl.DataContext>
     <Grid Background="#fff">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.9*"/>
@@ -59,8 +62,7 @@
             <Button Margin="7"
                     Grid.Row="3"
                     Grid.Column="1"
-                    Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
-                        Path=(viewmodelswin:MainWindowViewModel.UpdateViewCommand)}"
+                    Command="{Binding UpdateViewCommand}"
                     CommandParameter="Settings">
                 <Button.Content>
                     <Viewbox Margin="10">

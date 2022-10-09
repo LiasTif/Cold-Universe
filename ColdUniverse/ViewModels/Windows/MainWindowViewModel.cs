@@ -21,6 +21,11 @@ namespace ColdUniverse.ViewModels.Windows
             }
         }
 
+        public void SetSettingsVM()
+        {
+            CurrentUserControl = new SettingsViewModel();
+        }
+
         public ICommand AppExit { get; set; }
         public ICommand UpdateViewCommand { get; set; }
 

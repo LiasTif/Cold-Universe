@@ -9,5 +9,5 @@
         d:Width="1960"
         MinHeight="560"
         MinWidth="1060">
-    <ContentControl Content="{Binding CurrentUserControl}"/>
+    <ContentControl Content="{Binding CurrentUserControl, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 </Window>

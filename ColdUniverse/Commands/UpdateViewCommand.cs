@@ -29,7 +29,7 @@ namespace ColdUniverse.Commands
             }
             else if (parameter.ToString() == "Settings")
             {
-                viewModel.CurrentUserControl = new SettingsViewModel();
+                viewModel.SetSettingsVM();
             }
             //else if (parameter.ToString() == "WorldCreation")
             //{
