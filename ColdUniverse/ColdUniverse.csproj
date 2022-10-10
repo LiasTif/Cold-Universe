@@ -26,7 +26,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\WorldCreation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,10 +90,13 @@
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\NavigateMenuCommand.cs" />
     <Compile Include="Commands\NavigateSettingsCommand.cs" />
+    <Compile Include="Commands\NavigateWorldCreationCommand.cs" />
+    <Compile Include="Conventers\WarDifficultyConventer.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\UserControls\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\UserControls\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\WorldCreationViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainWindowViewModel.cs" />
     <Compile Include="Views\Other\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -100,6 +107,9 @@
     </Compile>
     <Compile Include="Views\UserControls\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\WorldCreation.xaml.cs">
+      <DependentUpon>WorldCreation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

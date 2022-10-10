@@ -45,7 +45,8 @@
             </Button>
             <Button Margin="7"
                     Grid.Row="2"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Command="{Binding NavigateWorldCreationCommand}">
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Создать мир"
