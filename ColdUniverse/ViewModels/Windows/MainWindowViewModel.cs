@@ -11,7 +11,6 @@ namespace ColdUniverse.ViewModels.Windows
         public MainWindowViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
-
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 

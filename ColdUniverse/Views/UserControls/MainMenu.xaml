@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewmodelswin="clr-namespace:ColdUniverse.ViewModels.Windows"
              mc:Ignorable="d" 
              d:Height="1080"
              d:Width="1960">
@@ -47,8 +46,6 @@
             <Button Margin="7"
                     Grid.Row="2"
                     Grid.Column="1">
-                <!-- Command="{Binding UpdateViewCommand}"
-                    CommandParameter="WorldCreation" -->
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Создать мир"
@@ -59,8 +56,7 @@
             <Button Margin="7"
                     Grid.Row="3"
                     Grid.Column="1"
-                    Command="{Binding NavigateSettingsCommand}"
-                    CommandParameter="Settings">
+                    Command="{Binding NavigateSettingsCommand}">
                 <Button.Content>
                     <Viewbox Margin="10">
                         <TextBlock Text="Опции"

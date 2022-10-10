@@ -13,8 +13,11 @@ namespace ColdUniverse.Stores
             get => _currentViewModel;
             set
             {
-                _currentViewModel = value;
-                OnCurrentViewModelChanged();
+                if (_currentViewModel != value)
+                {
+                    _currentViewModel = value;
+                    OnCurrentViewModelChanged();
+                }
             }
         }
 
