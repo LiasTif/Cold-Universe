@@ -91,6 +91,7 @@
     <Compile Include="Commands\NavigateMenuCommand.cs" />
     <Compile Include="Commands\NavigateSettingsCommand.cs" />
     <Compile Include="Commands\NavigateWorldCreationCommand.cs" />
+    <Compile Include="Conventers\CreateWorldButtonActiveConventer.cs" />
     <Compile Include="Conventers\WarDifficultyConventer.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
