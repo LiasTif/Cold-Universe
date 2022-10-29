@@ -49,7 +49,11 @@
     <Compile Include="Interfaces\WorldCreation\ISuccessorIdsCollection.cs" />
     <Compile Include="Interfaces\WorldCreation\ITemperature.cs" />
     <Compile Include="Interfaces\WorldCreation\IType.cs" />
-    <Compile Include="Models\WorldCreation\NameGenerator.cs" />
+    <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
+    <Compile Include="Models\WorldCreation\NameGenerators\Diagraph.cs" />
+    <Compile Include="Models\WorldCreation\NameGenerators\NameGenerator.cs" />
+    <Compile Include="Models\WorldCreation\NameGenerators\RandomNumber.cs" />
+    <Compile Include="Models\WorldCreation\NameGenerators\Volwels.cs" />
     <Compile Include="Models\WorldCreation\Objects\Satellite.cs" />
     <Compile Include="Models\WorldCreation\Objects\Asteroid.cs" />
     <Compile Include="Models\WorldCreation\Objects\AsteroidField.cs" />
