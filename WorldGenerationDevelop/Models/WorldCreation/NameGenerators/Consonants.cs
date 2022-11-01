@@ -2,7 +2,7 @@
 {
     public class Consonants
     {
-        private readonly RandomNumber _randomNumber = new RandomNumber();
+        private readonly RandomNumber _randomNum = new RandomNumber();
         private readonly Diagraph _diagraph = new Diagraph();
 
         /// <summary>
@@ -22,9 +22,9 @@
         /// <returns>consonant from array</returns>
         public string GetConsonants(bool isLowerChapter)
         {
-            string name = isLowerChapter ? consonants[_randomNumber.GenRandomNum
+            string name = isLowerChapter ? consonants[_randomNum.GenRandomNum
                 (0, consonants.Length - 1)].ToLower() :
-                consonants[_randomNumber.GenRandomNum(0, consonants.Length - 1)];
+                consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
 
             return name.Remove(name.Length - 1, 1).Insert
                         (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();

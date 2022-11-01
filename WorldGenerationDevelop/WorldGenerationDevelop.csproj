@@ -49,6 +49,8 @@
     <Compile Include="Interfaces\WorldCreation\ISuccessorIdsCollection.cs" />
     <Compile Include="Interfaces\WorldCreation\ITemperature.cs" />
     <Compile Include="Interfaces\WorldCreation\IType.cs" />
+    <Compile Include="Models\WorldCreation\Generation\IdSetter.cs" />
+    <Compile Include="Models\WorldCreation\Generation\StartGen.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Diagraph.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\NameGenerator.cs" />

@@ -9,7 +9,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     {
         private readonly Consonants _consonants = new Consonants();
         private readonly Volwels _volwels = new Volwels();
-        private readonly RandomNumber _randomNumber = new RandomNumber();
+        private readonly RandomNumber _randomNum = new RandomNumber();
 
         /// <summary>
         /// Generate a name for the object
@@ -19,10 +19,10 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string GenerateName()
         {
             string actualName = "";
-            int nameSize = _randomNumber.GenRandomNum(3, 9);
+            int nameSize = _randomNum.GenRandomNum(3, 9);
 
             // Generating the beginning of a line with a vowel or consonant
-            if (_randomNumber.GenRandomNum(1, 2) != 1)
+            if (_randomNum.GenRandomNum(1, 2) != 1)
             {
                 actualName += _consonants.GetConsonants(false);
 

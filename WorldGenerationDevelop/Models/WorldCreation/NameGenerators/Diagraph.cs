@@ -2,7 +2,7 @@
 {
     public class Diagraph
     {
-        private readonly RandomNumber _randomNumber = new RandomNumber();
+        private readonly RandomNumber _randomNum = new RandomNumber();
 
         /// <summary>
         /// Returns the diagraph if the chance is triggered
@@ -12,7 +12,7 @@
         public string IsDigraph(string name)
         {
             // Chanse of diagraph
-            if (_randomNumber.GenRandomNum(1, 40) > 38)
+            if (_randomNum.GenRandomNum(1, 40) > 38)
                 name += (name[name.Length - 1]).ToString().ToLower();
             return name;
         }
