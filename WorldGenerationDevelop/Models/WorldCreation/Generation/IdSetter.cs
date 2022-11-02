@@ -2,11 +2,11 @@
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
-    public class IdSetter
+    public static class IdSetter
     {
-        public ObservableCollection<int> IdCollection { get; private set; }
+        public static ObservableCollection<int> IdCollection { get; private set; }
 
-        public int GetId()
+        public static int GetId()
         {
             if (IdCollection == null)
                 IdCollection = new ObservableCollection<int> { 1 };
