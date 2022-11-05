@@ -7,9 +7,10 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     /// </summary>
     public class NameGenerator
     {
-        private readonly Consonants _consonants = new Consonants();
-        private readonly Volwels _volwels = new Volwels();
-        private readonly RandomNumber _randomNum = new RandomNumber();
+        private Consonants Consonants { get; } = new Consonants();
+        private Volwels Volwels { get; } = new Volwels();
+        private RandomNumber RandomNum { get; } = new RandomNumber();
+
 
         /// <summary>
         /// Generate a name for the object
@@ -19,35 +20,35 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string GenerateName()
         {
             string actualName = "";
-            int nameSize = _randomNum.GenRandomNum(3, 9);
+            int nameSize = RandomNum.GenRandomNum(3, 9);
 
             // Generating the beginning of a line with a vowel or consonant
-            if (_randomNum.GenRandomNum(1, 2) != 1)
+            if (RandomNum.GenRandomNum(1, 2) != 1)
             {
-                actualName += _consonants.GetConsonants(false);
+                actualName += Consonants.GetConsonants(false);
 
                 while (actualName.Length <= nameSize)
                 {
-                    actualName += _volwels.GetVolwel(false);
+                    actualName += Volwels.GetVolwel(false);
 
                     if (actualName.Length >= nameSize)
                         break;
 
-                    actualName += _consonants.GetConsonants(true);
+                    actualName += Consonants.GetConsonants(true);
                 }
             }
             else
             {
-                actualName += _volwels.GetVolwel(true);
+                actualName += Volwels.GetVolwel(true);
 
                 while (actualName.Length <= nameSize)
                 {
-                    actualName += _consonants.GetConsonants(true);
+                    actualName += Consonants.GetConsonants(true);
 
                     if (actualName.Length >= nameSize)
                         break;
 
-                    actualName += _volwels.GetVolwel(false);
+                    actualName += Volwels.GetVolwel(false);
                 }
             }
             return actualName;

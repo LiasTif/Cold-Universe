@@ -2,19 +2,29 @@
 {
     public class StartGen
     {
-        private readonly NameGenerator _nameGen = new NameGenerator();
+        public GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
+        public StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
 
-        private static readonly Galaxy _galaxy = new Galaxy();
 
+        /// <summary>
+        /// numerical indicator of the size of the galaxy
+        /// </summary>
+        public int SizeOfGalaxy { private get; set; }
+
+
+        /// <summary>
+        /// start generation
+        /// </summary>
         public StartGen()
         {
-            _galaxy.Id = IdSetter.GetId();
-            _galaxy.Name = _nameGen.GenerateName();
-        }
+            GalaxyInit.GalaxyInit();
 
-        public Galaxy GetGalaxy()
-        {
-            return _galaxy;
+            SizeOfGalaxy = 1;
+            for (int i = 0; i < SizeOfGalaxy * 5; i++)
+            {
+                using (var context = new MyDbContext())
+                    context.StarSystems.Add(StarSystemInit.StarSystemInit(GalaxyInit.Galaxy));
+            }
         }
     }
 }
