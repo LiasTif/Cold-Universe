@@ -15,7 +15,7 @@
         /// <summary>
         /// start generation
         /// </summary>
-        public StartGen()
+        public void StartGeneration()
         {
             GalaxyInit.GalaxyInit();
 
@@ -23,7 +23,10 @@
             for (int i = 0; i < SizeOfGalaxy * 5; i++)
             {
                 using (var context = new MyDbContext())
+                {
                     context.StarSystems.Add(StarSystemInit.StarSystemInit(GalaxyInit.Galaxy));
+                    context.SaveChanges();
+                }
             }
         }
     }

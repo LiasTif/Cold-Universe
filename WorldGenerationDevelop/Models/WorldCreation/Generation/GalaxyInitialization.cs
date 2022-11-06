@@ -20,7 +20,17 @@
             {
                 Galaxy.Name = NameGen.GenerateName();
                 context.Galaxies.Add(Galaxy);
+                context.SaveChanges();
             }
+        }
+
+        /// <summary>
+        /// get information about galaxy
+        /// </summary>
+        public Galaxy GetGalaxy(int id)
+        {
+            using (var context = new MyDbContext())
+                return context.Galaxies.Find(id);
         }
     }
 }

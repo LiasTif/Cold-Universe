@@ -1,4 +1,5 @@
-﻿using WorldGenerationDevelop.Models.WorldCreation.Generation;
+﻿using WorldGenerationDevelop.Models;
+using WorldGenerationDevelop.Models.WorldCreation.Generation;
 
 namespace WorldGenerationDevelopTests
 {
@@ -7,10 +8,13 @@ namespace WorldGenerationDevelopTests
         [Fact]
         public void StartGeneration_DbTables_NANReturned()
         {
-            GalaxyInitialization galaxyInitialization = new GalaxyInitialization();
-            StartGen startGen = new();
+            GalaxyInitialization galaxyInit = new();
+            StarSystemInitialization starSystemInit = new();
 
-            Assert.NotNull(galaxyInitialization.Galaxy);
+            Assert.NotNull(galaxyInit.GetGalaxy(1));
+
+            for (int i = 0; i < 6; i++)
+                Assert.NotNull(starSystemInit.GetStarSystem(i));
         }
     }
 }

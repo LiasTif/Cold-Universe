@@ -2,6 +2,6 @@
 {
     public interface ISize
     {
-        byte Size { get; set; }
+        byte? Size { get; set; }
     }
 }
