@@ -1,9 +1,7 @@
-﻿#nullable enable
-
-namespace WorldGenerationDevelop.Interfaces.WorldCreation
+﻿namespace WorldGenerationDevelop.Interfaces.WorldCreation
 {
     public interface IType
     {
-        string? Type { get; set; }
+        string Type { get; set; }
     }
 }

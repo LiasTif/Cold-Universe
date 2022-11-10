@@ -2,6 +2,6 @@
 {
     public interface ITemperature
     {
-        byte? Temperature { get; set; }
+        byte Temperature { get; set; }
     }
 }
