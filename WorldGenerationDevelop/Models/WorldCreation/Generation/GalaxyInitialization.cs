@@ -4,7 +4,6 @@
     {
         public NameGenerator NameGen { get; } = new NameGenerator();
 
-
         /// <summary>
         /// current galaxy
         /// </summary>
@@ -16,21 +15,11 @@
         /// </summary>
         public void GalaxyInit()
         {
-            using (var context = new MyDbContext())
-            {
-                Galaxy.Name = NameGen.GenerateName();
-                context.Galaxies.Add(Galaxy);
-                context.SaveChanges();
-            }
-        }
+            using var context = new MyDbContext();
 
-        /// <summary>
-        /// get information about galaxy
-        /// </summary>
-        public Galaxy GetGalaxy(int id)
-        {
-            using (var context = new MyDbContext())
-                return context.Galaxies.Find(id);
+            Galaxy.Name = NameGen.GenerateName();
+            context.Galaxies.Add(Galaxy);
+            context.SaveChanges();
         }
     }
 }

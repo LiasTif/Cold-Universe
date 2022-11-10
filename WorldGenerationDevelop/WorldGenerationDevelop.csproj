@@ -15,8 +15,8 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-	<Nullable>enable</Nullable>
-	<LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,7 +67,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\WorldCreation\Generation\GalaxyAccess.cs" />
     <Compile Include="Models\WorldCreation\Generation\GalaxyInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\StarSystemAccess.cs" />
     <Compile Include="Models\WorldCreation\Generation\StarSystemInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\StartGen.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
