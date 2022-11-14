@@ -1,30 +1,32 @@
-﻿namespace WorldGenerationDevelop.Models.WorldCreation.Generation
+﻿using WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies;
+using WorldGenerationDevelop.Models.WorldCreation.Generation.Sectors;
+
+namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
     public class StartGen
     {
         public GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
-        public StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
-
+        public SectorInitialization SectorInit { get; } = new SectorInitialization();
 
         /// <summary>
         /// numerical indicator of the size of the galaxy
         /// </summary>
         public int SizeOfGalaxy { private get; set; }
 
-
         /// <summary>
         /// start generation
         /// </summary>
-        public void StartGeneration()
+        public void GenerateWorld()
         {
-            GalaxyInit.GalaxyInit();
+            Galaxy galaxy = GalaxyInit.GalaxyInit();
 
             SizeOfGalaxy = 1;
             for (int i = 0; i < SizeOfGalaxy * 5; i++)
             {
                 using var context = new MyDbContext();
-                
-                context.StarSystems.Add(StarSystemInit.StarSystemInit(GalaxyInit.Galaxy));
+
+                // generate sectors and add them to DataBase
+                context.Sectors.Add(SectorInit.SectorInit(galaxy));
                 context.SaveChanges();
             }
         }

@@ -9,5 +9,10 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string Name { get; set; }
         public string Description { get; set; }
         #endregion
+
+        #region Parent
+        public int GalaxyId { get; set; }
+        public virtual Galaxy Galaxy { get; set; }
+        #endregion
     }
 }

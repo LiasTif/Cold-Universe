@@ -1,5 +1,5 @@
 ﻿using System;
-using WorldGenerationDevelop.Models.WorldCreation.Generation;
+using WorldGenerationDevelop.Models;
 
 namespace WorldGenerationDevelop
 {
@@ -7,11 +7,6 @@ namespace WorldGenerationDevelop
     {
         static void Main(string[] args)
         {
-            GalaxyInitialization galaxyInit = new GalaxyInitialization();
-            GalaxyAccess galaxyAccess = new GalaxyAccess();
-            StarSystemInitialization starSystemInit = new StarSystemInitialization();
-            StarSystemAccess starSystemAccess = new StarSystemAccess();
-
             //Console.WriteLine(galaxyAccess.GetGalaxy(1).Name);
             //Console.WriteLine(starSystemAccess.GetStarSystem(1).Name);
 
@@ -24,6 +19,15 @@ namespace WorldGenerationDevelop
             //    starSystemInit.ChangeStarSystemParent(i, 2);
             //}
 
+            //context.Galaxies.RemoveRange(context.Galaxies);
+            //context.SaveChanges();
+
+            //context.StarSystems.RemoveRange(context.StarSystems);
+            //context.SaveChanges();
+
+            using var context = new MyDbContext();
+
+            Console.WriteLine("Opertation has ended");
             Console.ReadKey();
         }
     }

@@ -10,6 +10,7 @@ namespace WorldGenerationDevelop.Models
         }
 
         public DbSet<Galaxy> Galaxies { get; set; }
+        public DbSet<Sector> Sectors { get; set; }
         public DbSet<StarSystem> StarSystems { get; set; }
     }
 }

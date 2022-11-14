@@ -77,12 +77,17 @@
     <Compile Include="Migrations\202211101747041_UpdateStarSystemParentIdToGalaxy.designer.cs">
       <DependentUpon>202211101747041_UpdateStarSystemParentIdToGalaxy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211141827430_RestrutureAllOfObjects.cs" />
+    <Compile Include="Migrations\202211141827430_RestrutureAllOfObjects.designer.cs">
+      <DependentUpon>202211141827430_RestrutureAllOfObjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
-    <Compile Include="Models\WorldCreation\Generation\GalaxyAccess.cs" />
-    <Compile Include="Models\WorldCreation\Generation\GalaxyInitialization.cs" />
-    <Compile Include="Models\WorldCreation\Generation\StarSystemAccess.cs" />
-    <Compile Include="Models\WorldCreation\Generation\StarSystemInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyAccess.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Sectors\SectorInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemAccess.cs" />
+    <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\StartGen.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Diagraph.cs" />
@@ -119,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211101747041_UpdateStarSystemParentIdToGalaxy.resx">
       <DependentUpon>202211101747041_UpdateStarSystemParentIdToGalaxy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211141827430_RestrutureAllOfObjects.resx">
+      <DependentUpon>202211141827430_RestrutureAllOfObjects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

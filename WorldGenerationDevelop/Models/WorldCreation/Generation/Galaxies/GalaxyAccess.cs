@@ -1,9 +1,9 @@
-﻿namespace WorldGenerationDevelop.Models.WorldCreation.Generation
+﻿namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies
 {
     public class GalaxyAccess
     {
         /// <summary>
-        /// get information about galaxy
+        /// get Galaxy by id
         /// </summary>
         public Galaxy GetGalaxy(int id)
         {
@@ -12,7 +12,7 @@
         }
 
         /// <summary>
-        /// remove galaxy from db
+        /// remove galaxy from DataBase by id
         /// </summary>
         public void RemoveGalaxy(int id)
         {
