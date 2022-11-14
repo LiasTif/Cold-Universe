@@ -2,9 +2,14 @@
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class Satellite : BaseObject, IParentId, IType, ITemperature, IColonizedLevel
+    public class Satellite : IBase, IType, ITemperature, IColonizedLevel
     {
-        public int ParentId { get; set; }
+        #region Base
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        #endregion
+
         public string Type { get; set; }
         public byte Temperature { get; set; }
         public byte ColonizedLevel { get; set; }

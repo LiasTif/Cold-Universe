@@ -17,7 +17,7 @@
         {
             return new StarSystem
             {
-                ParentId = parentGalaxy.Id,
+                Galaxy = parentGalaxy,
                 Name = NameGen.GenerateName()
             };
         }
@@ -27,11 +27,11 @@
         /// </summary>
         /// <param name="id">star system id</param>
         /// <param name="newParrentId">new parrent id</param>
-        public void ChangeStarSystemParentId(int id, int newParrentId)
+        public void ChangeStarSystemParent(int id, Galaxy newParentGalaxy)
         {
             using var context = new MyDbContext();
 
-            context.StarSystems.Find(id).ParentId = newParrentId;
+            context.StarSystems.Find(id).Galaxy = newParentGalaxy;
             context.SaveChanges();
         }
     }

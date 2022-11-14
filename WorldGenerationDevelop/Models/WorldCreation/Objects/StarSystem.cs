@@ -1,11 +1,18 @@
-﻿using System.Collections.ObjectModel;
-using WorldGenerationDevelop.Interfaces.WorldCreation;
+﻿using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class StarSystem : BaseObject, IParentId, ISuccessorIdsCollection
+    public class StarSystem : IBase
     {
-        public int ParentId { get; set; }
-        public ObservableCollection<int> SuccessorIds { get; set; }
+        #region Base
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        #endregion
+
+        #region Parent
+        public int SectorId { get; set; }
+        public virtual Sector Sector { get; set; }
+        #endregion
     }
 }

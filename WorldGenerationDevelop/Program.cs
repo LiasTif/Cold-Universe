@@ -21,7 +21,7 @@ namespace WorldGenerationDevelop
 
             //for (int i = 1; i < 6; i++)
             //{
-            //    starSystemInit.ChangeStarSystemParentId(i, 2);
+            //    starSystemInit.ChangeStarSystemParent(i, 2);
             //}
 
             Console.ReadKey();

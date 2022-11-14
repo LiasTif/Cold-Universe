@@ -1,9 +1,12 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using WorldGenerationDevelop.Models.WorldCreation;
 
 namespace WorldGenerationDevelop.Interfaces.WorldCreation
 {
-    public interface ISuccessorIdsCollection
+    public interface ISuccessorsCollection
     {
-        ObservableCollection<int> SuccessorIds { get; set; }
+        ICollection<Asteroid> Asteroids { get; set; }
+        ICollection<Station> Stations { get; set; }
+        ICollection<Fleet> Fleets { get; set; }
     }
 }

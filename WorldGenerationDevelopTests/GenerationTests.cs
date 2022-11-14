@@ -9,10 +9,12 @@ namespace WorldGenerationDevelopTests
         public void StartGeneration_DbTables_NANReturned()
         {
             GalaxyInitialization galaxyInit = new();
+            GalaxyAccess galaxyAccess = new();
+            StarSystemAccess starSystemAccess = new();
             StarSystemInitialization starSystemInit = new();
 
-            Assert.NotNull(galaxyInit.GetGalaxy(0));
-            Assert.NotNull(starSystemInit.GetStarSystem(0));
+            Assert.NotNull(galaxyAccess.GetGalaxy(0));
+            Assert.NotNull(starSystemAccess.GetStarSystem(0));
 
             //for (int i = 1; i < 6; i++)
             //    Assert.NotNull(starSystemInit.GetStarSystem(i));

@@ -1,12 +1,15 @@
-﻿using System.Collections.ObjectModel;
-using WorldGenerationDevelop.Interfaces.WorldCreation;
+﻿using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class Star : BaseObject, IParentId, ISuccessorIdsCollection, IType
+    public class Star : IBase, IType
     {
-        public int ParentId { get; set; }
+        #region Base
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        #endregion
+
         public string Type { get; set; }
-        public ObservableCollection<int> SuccessorIds { get; set; }
     }
 }

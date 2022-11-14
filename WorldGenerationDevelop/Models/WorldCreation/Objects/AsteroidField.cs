@@ -2,9 +2,14 @@
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class AsteroidField : BaseObject, IParentId, ISize
+    public class AsteroidField : IBase, ISize
     {
-        public int ParentId { get; set; }
+        #region Base
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        #endregion
+
         public byte Size { get; set; }
     }
 }

@@ -1,10 +1,18 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class Galaxy : BaseObject, ISuccessorIdsCollection
+    public class Galaxy : IBase
     {
-        public ObservableCollection<int> SuccessorIds { get; set; }
+        #region Base
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        #endregion
+
+        #region Child objects
+        public virtual ICollection<Sector> SectorsId { get; set; }
+        #endregion
     }
 }

@@ -55,15 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\WorldCreation\IBase.cs" />
     <Compile Include="Interfaces\WorldCreation\ISize.cs" />
     <Compile Include="Interfaces\WorldCreation\IColonizedLevel.cs" />
-    <Compile Include="Interfaces\WorldCreation\IParentId.cs" />
     <Compile Include="Interfaces\WorldCreation\ISuccessorIdsCollection.cs" />
     <Compile Include="Interfaces\WorldCreation\ITemperature.cs" />
     <Compile Include="Interfaces\WorldCreation\IType.cs" />
     <Compile Include="Migrations\202211051237145_AddFiles.cs" />
     <Compile Include="Migrations\202211051237145_AddFiles.designer.cs">
       <DependentUpon>202211051237145_AddFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101736416_UpdatedObjects.cs" />
+    <Compile Include="Migrations\202211101736416_UpdatedObjects.designer.cs">
+      <DependentUpon>202211101736416_UpdatedObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101742437_UpdateGalaxySuccessorsId.cs" />
+    <Compile Include="Migrations\202211101742437_UpdateGalaxySuccessorsId.designer.cs">
+      <DependentUpon>202211101742437_UpdateGalaxySuccessorsId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211101747041_UpdateStarSystemParentIdToGalaxy.cs" />
+    <Compile Include="Migrations\202211101747041_UpdateStarSystemParentIdToGalaxy.designer.cs">
+      <DependentUpon>202211101747041_UpdateStarSystemParentIdToGalaxy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
@@ -77,10 +89,10 @@
     <Compile Include="Models\WorldCreation\NameGenerators\NameGenerator.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\RandomNumber.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Volwels.cs" />
+    <Compile Include="Models\WorldCreation\Objects\ParrentForSmallObjects.cs" />
     <Compile Include="Models\WorldCreation\Objects\Satellite.cs" />
     <Compile Include="Models\WorldCreation\Objects\Asteroid.cs" />
     <Compile Include="Models\WorldCreation\Objects\AsteroidField.cs" />
-    <Compile Include="Models\WorldCreation\Objects\BaseObject.cs" />
     <Compile Include="Models\WorldCreation\Objects\Fleet.cs" />
     <Compile Include="Models\WorldCreation\Objects\Galaxy.cs" />
     <Compile Include="Models\WorldCreation\Objects\Planet.cs" />
@@ -98,6 +110,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202211051237145_AddFiles.resx">
       <DependentUpon>202211051237145_AddFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101736416_UpdatedObjects.resx">
+      <DependentUpon>202211101736416_UpdatedObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101742437_UpdateGalaxySuccessorsId.resx">
+      <DependentUpon>202211101742437_UpdateGalaxySuccessorsId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211101747041_UpdateStarSystemParentIdToGalaxy.resx">
+      <DependentUpon>202211101747041_UpdateStarSystemParentIdToGalaxy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
