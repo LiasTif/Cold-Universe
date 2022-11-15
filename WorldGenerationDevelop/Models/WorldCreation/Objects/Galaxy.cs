@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+using System.Collections.Generic;
 using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
@@ -7,12 +8,12 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     {
         #region Base
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
         #endregion
 
         #region Child objects
-        public virtual ICollection<Sector> SectorsId { get; set; }
+        public virtual ICollection<Sector>? SectorsId { get; set; }
         #endregion
     }
 }

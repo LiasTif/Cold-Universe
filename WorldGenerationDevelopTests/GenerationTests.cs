@@ -1,5 +1,5 @@
-﻿using WorldGenerationDevelop.Models;
-using WorldGenerationDevelop.Models.WorldCreation.Generation;
+﻿using WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies;
+using WorldGenerationDevelop.Models.WorldCreation.Generation.Sectors;
 
 namespace WorldGenerationDevelopTests
 {
@@ -10,11 +10,10 @@ namespace WorldGenerationDevelopTests
         {
             GalaxyInitialization galaxyInit = new();
             GalaxyAccess galaxyAccess = new();
-            StarSystemAccess starSystemAccess = new();
-            StarSystemInitialization starSystemInit = new();
+            SectorInitialization sectorInit = new();
 
-            Assert.NotNull(galaxyAccess.GetGalaxy(0));
-            Assert.NotNull(starSystemAccess.GetStarSystem(0));
+            //Assert.NotNull(galaxyAccess.GetGalaxy(0));
+            //Assert.NotNull(sectorInit.GetStarSystem(0));
 
             //for (int i = 1; i < 6; i++)
             //    Assert.NotNull(starSystemInit.GetStarSystem(i));

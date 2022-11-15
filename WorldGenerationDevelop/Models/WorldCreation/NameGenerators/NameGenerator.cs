@@ -11,6 +11,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         private Volwels Volwels { get; } = new Volwels();
         private RandomNumber RandomNum { get; } = new RandomNumber();
 
+        public static bool Diagraph { private get; set; }
 
         /// <summary>
         /// Generate a name for the object
@@ -19,36 +20,40 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         /// <returns>Name for the object</returns>
         public string GenerateName()
         {
+            Diagraph = false;
             string actualName = "";
             int nameSize = RandomNum.GenRandomNum(3, 9);
 
             // Generating the beginning of a line with a vowel or consonant
+            // first letter are:
+            //   1 - volwel
+            //   2 - consonant
             if (RandomNum.GenRandomNum(1, 2) != 1)
             {
-                actualName += Consonants.GetConsonants(false);
+                actualName += Consonants.GetConsonants(false, Diagraph);
 
                 while (actualName.Length <= nameSize)
                 {
-                    actualName += Volwels.GetVolwel(false);
+                    actualName += Volwels.GetVolwel(false, Diagraph);
 
                     if (actualName.Length >= nameSize)
                         break;
 
-                    actualName += Consonants.GetConsonants(true);
+                    actualName += Consonants.GetConsonants(true, Diagraph);
                 }
             }
             else
             {
-                actualName += Volwels.GetVolwel(true);
+                actualName += Volwels.GetVolwel(true, Diagraph);
 
                 while (actualName.Length <= nameSize)
                 {
-                    actualName += Consonants.GetConsonants(true);
+                    actualName += Consonants.GetConsonants(true, Diagraph);
 
                     if (actualName.Length >= nameSize)
                         break;
 
-                    actualName += Volwels.GetVolwel(false);
+                    actualName += Volwels.GetVolwel(false, Diagraph);
                 }
             }
             return actualName;

@@ -18,14 +18,27 @@
         /// </summary>
         /// <param name="IsStartOfSentence">It is a start of sentence?</param>
         /// <returns>volwel from array</returns>
-        public string GetVolwel(bool IsStartOfSentence)
+        public string GetVolwel(bool IsStartOfSentence, bool diagraph)
         {
-            // vowels[GenRandomNum(1, x)
-            // allows you not to use "Я" in the middle of a sentence
-            string name = IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
-                vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower();
-            return name.Remove(name.Length - 1, 1).Insert
-                        (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();
+            if (diagraph)
+            {
+                return IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
+                    vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower();
+            }
+            else
+            {
+                //                     ↓
+                // vowels[GenRandomNum(1, x)
+                // allows you not to use "Я" in the middle of a sentence
+                string name = IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
+                    vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower();
+
+                // turn off next diagraph on the current name
+                NameGenerator.Diagraph = true;
+
+                return name.Remove(name.Length - 1, 1).Insert
+                            (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();
+            }
         }
     }
 }

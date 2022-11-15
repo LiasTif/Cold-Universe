@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿#nullable enable
+using System.ComponentModel.DataAnnotations;
 
 namespace WorldGenerationDevelop.Interfaces.WorldCreation
 {
@@ -7,8 +8,8 @@ namespace WorldGenerationDevelop.Interfaces.WorldCreation
         [Key]
         int Id { get; set; }
 
-        string Name { get; set; }
+        string? Name { get; set; }
 
-        string Description { get; set; }
+        string? Description { get; set; }
     }
 }

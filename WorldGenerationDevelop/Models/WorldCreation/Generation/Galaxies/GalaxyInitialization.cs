@@ -11,6 +11,7 @@
         {
             using var context = new MyDbContext();
 
+            // set Galaxy parameters
             Galaxy galaxy = new Galaxy
             {
                 Name = NameGen.GenerateName()
