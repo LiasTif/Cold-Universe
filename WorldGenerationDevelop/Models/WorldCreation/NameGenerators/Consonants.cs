@@ -20,24 +20,26 @@
         /// </summary>
         /// <param name="isLowerChapter">put the consonant in lower case?</param>
         /// <returns>consonant from array</returns>
-        public string GetConsonants(bool isLowerChapter, bool diagraph)
+        public string GetConsonants(bool isLowerChapter/*, bool diagraph*/)
         {
-            if (diagraph)
-            {
-                return isLowerChapter ? consonants[_randomNum.GenRandomNum (0, consonants.Length - 1)].ToLower() :
-                    consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
-            }
-            else
-            {
-                string name = isLowerChapter ? consonants[_randomNum.GenRandomNum (0, consonants.Length - 1)].ToLower() :
-                    consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
+            //if (diagraph)
+            //{
+            //    return isLowerChapter ? consonants[_randomNum.GenRandomNum (0, consonants.Length - 1)].ToLower() :
+            //        consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
+            //}
+            //else
+            //{
+            //    string name = isLowerChapter ? consonants[_randomNum.GenRandomNum (0, consonants.Length - 1)].ToLower() :
+            //        consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
 
-                // turn off next diagraph on the current name
-                NameGenerator.Diagraph = true;
+            //    // turn off next diagraph on the current name
+            //    NameGenerator.Diagraph = true;
 
-                return name.Remove(name.Length - 1, 1).Insert
-                    (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();
-            }
+            //    return name.Remove(name.Length - 1, 1).Insert
+            //        (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();
+            //}
+            return isLowerChapter ? consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)].ToLower() :
+                    consonants[_randomNum.GenRandomNum(0, consonants.Length - 1)];
         }
     }
 }

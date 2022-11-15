@@ -30,7 +30,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
             //   2 - consonant
             if (RandomNum.GenRandomNum(1, 2) != 1)
             {
-                actualName += Consonants.GetConsonants(false, Diagraph);
+                actualName += Consonants.GetConsonants(false);
 
                 while (actualName.Length <= nameSize)
                 {
@@ -39,7 +39,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
                     if (actualName.Length >= nameSize)
                         break;
 
-                    actualName += Consonants.GetConsonants(true, Diagraph);
+                    actualName += Consonants.GetConsonants(true);
                 }
             }
             else
@@ -48,7 +48,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
 
                 while (actualName.Length <= nameSize)
                 {
-                    actualName += Consonants.GetConsonants(true, Diagraph);
+                    actualName += Consonants.GetConsonants(true);
 
                     if (actualName.Length >= nameSize)
                         break;
