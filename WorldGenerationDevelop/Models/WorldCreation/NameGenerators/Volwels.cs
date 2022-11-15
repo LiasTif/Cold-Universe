@@ -10,7 +10,7 @@
         /// </summary>
         public readonly string[] vowels = new string[6]
         {
-            "Я", "О", "У", "А", "И", "Е"
+            "Я", "Е", "И", "У", "А", "О"
         };
 
         /// <summary>
@@ -20,25 +20,29 @@
         /// <returns>volwel from array</returns>
         public string GetVolwel(bool IsStartOfSentence, bool diagraph)
         {
+            string name;
             if (diagraph)
             {
-                return IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
+                name = IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
                     vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower();
             }
             else
             {
-                //                     ↓
-                // vowels[GenRandomNum(1, x)
-                // allows you not to use "Я" in the middle of a sentence
-                string name = IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
-                    vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower();
+                name = IsStartOfSentence ? vowels[_randomNum.GenRandomNum(0, vowels.Length - 1)] :
+                    vowels[_randomNum.GenRandomNum(1, vowels.Length - 1)].ToLower(); // <-- vowels[GenRandomNum(4, x)
+                                                                                     //                         ↑
+                                                                                     // allows you not to use "Я" in the
+                                                                                     // middle of a sentence
 
-                // turn off next diagraph on the current name
-                NameGenerator.Diagraph = true;
+                // get last letter of the name
+                string lastLetter = name.Substring(name.Length - 1);
 
-                return name.Remove(name.Length - 1, 1).Insert
-                            (name.Length - 1, _diagraph.IsDigraph(name)).ToLower();
+                // insert diagraph if last letter are 'a' or 'o'
+                if (lastLetter == "А" || lastLetter == "О")
+                    name.Remove(name.Length - 1, 1).Insert
+                        (name.Length - 1, _diagraph.IsDigraph(name));
             }
+            return name;
         }
     }
 }

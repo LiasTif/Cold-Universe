@@ -12,8 +12,12 @@
         public string IsDigraph(string name)
         {
             // Chanse of diagraph
-            if (_randomNum.GenRandomNum(1, 40) > 38)
+            if (_randomNum.GenRandomNum(1, 30) > 28)
                 name += (name[name.Length - 1]).ToString().ToLower();
+
+            // turn off next diagraph on the current name
+            NameGenerator.Diagraph = true;
+
             return name;
         }
     }
