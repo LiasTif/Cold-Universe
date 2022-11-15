@@ -81,6 +81,10 @@
     <Compile Include="Migrations\202211141827430_RestrutureAllOfObjects.designer.cs">
       <DependentUpon>202211141827430_RestrutureAllOfObjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211151804074_updateObjects.cs" />
+    <Compile Include="Migrations\202211151804074_updateObjects.designer.cs">
+      <DependentUpon>202211151804074_updateObjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyAccess.cs" />
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211141827430_RestrutureAllOfObjects.resx">
       <DependentUpon>202211141827430_RestrutureAllOfObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211151804074_updateObjects.resx">
+      <DependentUpon>202211151804074_updateObjects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,18 +9,7 @@
         /// </summary>
         public Galaxy GalaxyInit()
         {
-            using var context = new MyDbContext();
-
-            // set Galaxy parameters
-            Galaxy galaxy = new Galaxy
-            {
-                Name = NameGen.GenerateName()
-            };
-
-            context.Galaxies.Add(galaxy);
-            context.SaveChanges();
-
-            return galaxy;
+            return new Galaxy { Name = NameGen.GenerateName() };
         }
     }
 }

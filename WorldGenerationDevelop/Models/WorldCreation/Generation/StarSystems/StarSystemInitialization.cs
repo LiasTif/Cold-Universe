@@ -1,38 +1,38 @@
-﻿//namespace WorldGenerationDevelop.Models.WorldCreation.Generation.StarSystems
-//{
-//    public class StarSystemInitialization
-//    {
-//        public NameGenerator NameGen { get; } = new NameGenerator();
-//        /// <summary>
-//        /// current star system
-//        /// </summary>
-//        public StarSystem StarSystem { get; private set; } = new StarSystem();
+﻿namespace WorldGenerationDevelop.Models.WorldCreation.Generation.StarSystems
+{
+    public class StarSystemInitialization
+    {
+        public NameGenerator NameGen { get; } = new NameGenerator();
+        /// <summary>
+        /// current star system
+        /// </summary>
+        public StarSystem StarSystem { get; private set; } = new StarSystem();
 
 
-//        /// <summary>
-//        /// generate star system
-//        /// </summary>
-//        /// <param name="parentGalaxy">parent galaxy object</param>
-//        public StarSystem StarSystemInit(Galaxy parentGalaxy)
-//        {
-//            return new StarSystem
-//            {
-//                Galaxy = parentGalaxy,
-//                Name = NameGen.GenerateName()
-//            };
-//        }
+        /// <summary>
+        /// generate star system
+        /// </summary>
+        /// <param name="parentGalaxy">parent galaxy object</param>
+        public StarSystem StarSystemInit(Sector parentSector)
+        {
+            return new StarSystem
+            {
+                Sector = parentSector,
+                Name = NameGen.GenerateName()
+            };
+        }
 
-//        /// <summary>
-//        /// change the ParrentId in star system
-//        /// </summary>
-//        /// <param name="id">star system id</param>
-//        /// <param name="newParrentId">new parrent id</param>
-//        public void ChangeStarSystemParent(int id, Galaxy newParentGalaxy)
-//        {
-//            using var context = new MyDbContext();
+        /// <summary>
+        /// change the ParrentId in star system
+        /// </summary>
+        /// <param name="id">star system id</param>
+        /// <param name="newParrentId">new parrent id</param>
+        public void ChangeStarSystemParent(int id, Sector newParentSector)
+        {
+            using var context = new MyDbContext();
 
-//            context.StarSystems.Find(id).Galaxy = newParentGalaxy;
-//            context.SaveChanges();
-//        }
-//    }
-//}
+            context.StarSystems.Find(id).Sector = newParentSector;
+            context.SaveChanges();
+        }
+    }
+}
