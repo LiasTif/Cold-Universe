@@ -2,7 +2,6 @@
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Sectors;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.StarSystems;
-using static System.Collections.Specialized.BitVector32;
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
@@ -15,7 +14,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         /// <summary>
         /// numerical indicator of the size of the galaxy
         /// </summary>
-        public int SizeOfGalaxy { private get; set; }
+        public int SizeOfGalaxy { private get; set; } = 1;
 
         /// <summary>
         /// start generation
@@ -29,16 +28,15 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
             var sectors = new List<Sector>();
             var starSystems = new List<StarSystem>();
 
-            SizeOfGalaxy = 1;
             for (int S = 0; S < SizeOfGalaxy * 5; S++)
             {
-                // generate sectors
+                // generate sectors and add its to DbContext
                 Sector sector = SectorInit.SectorInit(galaxy);
                 sectors.Add(sector);
 
                 for (int ss = 0; ss < SizeOfGalaxy * 5; ss++)
                 {
-                    // generate star systems
+                    // generate star systems and add its to DbContext
                     StarSystem starSystem = StarSystemInit.StarSystemInit(sector);
                     starSystems.Add(starSystem);
                 }
