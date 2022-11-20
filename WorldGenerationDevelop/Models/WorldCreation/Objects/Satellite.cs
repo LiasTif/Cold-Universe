@@ -11,7 +11,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string? Description { get; set; }
         #endregion
 
-        public string? Type { get; set; }
+        public char? Type { get; set; }
         public byte? Temperature { get; set; }
         public byte? ColonizedLevel { get; set; }
     }

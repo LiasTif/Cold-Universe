@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Sectors;
+using WorldGenerationDevelop.Models.WorldCreation.Generation.Stars;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.StarSystems;
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
     public class StartGen
     {
-        public GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
-        public SectorInitialization SectorInit { get; } = new SectorInitialization();
-        public StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
+        private GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
+        private SectorInitialization SectorInit { get; } = new SectorInitialization();
+        private StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
+        private StarInitialization StarInitialization { get;  } = new StarInitialization();
 
         /// <summary>
         /// numerical indicator of the size of the galaxy
@@ -27,6 +29,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 
             var sectors = new List<Sector>();
             var starSystems = new List<StarSystem>();
+            var stars = new List<Star>();
 
             for (int S = 0; S < SizeOfGalaxy * 5; S++)
             {
@@ -39,12 +42,17 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
                     // generate star systems and add its to DbContext
                     StarSystem starSystem = StarSystemInit.StarSystemInit(sector);
                     starSystems.Add(starSystem);
+
+                    // generate star and add it to DbContext
+                    Star star = StarInitialization.StarInit(starSystem);
+                    stars.Add(star);
                 }
             }
 
             context.Galaxies.Add(galaxy);
             context.Sectors.AddRange(sectors);
             context.StarSystems.AddRange(starSystems);
+            context.Stars.AddRange(stars);
 
             context.SaveChanges();
         }

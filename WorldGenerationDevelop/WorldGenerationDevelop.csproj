@@ -92,11 +92,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\Description.cs" />
-    <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyAccess.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Sectors\SectorInitialization.cs" />
-    <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemAccess.cs" />
     <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Stars\StarInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Stars\StarTypeGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\StartGen.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Diagraph.cs" />

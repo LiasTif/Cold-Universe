@@ -2,7 +2,7 @@
 {
     public class SectorInitialization
     {
-        public NameGenerator NameGen { get; } = new NameGenerator();
+        private NameGenerator NameGen { get; } = new NameGenerator();
 
         /// <summary>
         /// initialize sector

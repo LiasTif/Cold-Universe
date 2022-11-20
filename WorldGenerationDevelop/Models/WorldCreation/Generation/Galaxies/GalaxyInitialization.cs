@@ -2,7 +2,7 @@
 {
     public class GalaxyInitialization
     {
-        public NameGenerator NameGen { get; } = new NameGenerator();
+        private NameGenerator NameGen { get; } = new NameGenerator();
 
         /// <summary>
         /// initialize galaxy
