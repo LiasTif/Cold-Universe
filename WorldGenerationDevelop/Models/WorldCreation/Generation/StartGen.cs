@@ -8,6 +8,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
     public class StartGen
     {
+        #region properties
+        
         private GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
         private SectorInitialization SectorInit { get; } = new SectorInitialization();
         private StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
@@ -17,6 +19,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         /// numerical indicator of the size of the galaxy
         /// </summary>
         public int SizeOfGalaxy { private get; set; } = 1;
+
+        #endregion
 
         /// <summary>
         /// start generation
@@ -46,6 +50,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
                     // generate star and add it to DbContext
                     Star star = StarInitialization.StarInit(starSystem);
                     stars.Add(star);
+
+
                 }
             }
 

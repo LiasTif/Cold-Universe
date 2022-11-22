@@ -1,7 +1,8 @@
-﻿namespace WorldGenerationDevelop.Interfaces.WorldCreation
+﻿#nullable enable
+namespace WorldGenerationDevelop.Interfaces.WorldCreation
 {
     public interface ITemperature
     {
-        byte? Temperature { get; set; }
+        string? Temperature { get; set; }
     }
 }

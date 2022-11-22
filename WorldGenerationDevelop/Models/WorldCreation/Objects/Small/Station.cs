@@ -4,7 +4,7 @@ using WorldGenerationDevelop.Models.WorldCreation.Objects;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class Station : ParrentForSmallObjects, IBase, IType, ISize
+    public class Station : ParrentForSmallObjects, IBase, ISize
     {
         #region Base
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public override Satellite? Satellite { get; set; }
         #endregion
 
-        public char? Type { get; set; }
+        public string? StationType { get; set; }
         public byte? Size { get; set; }
     }
 }

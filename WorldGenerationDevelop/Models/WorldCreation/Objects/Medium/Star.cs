@@ -3,7 +3,7 @@ using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
-    public class Satellite : IBase, IType, ITemperature, IColonizedLevel
+    public class Star : IBase
     {
         #region Base
         public int Id { get; set; }
@@ -11,8 +11,6 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string? Description { get; set; }
         #endregion
 
-        public char? Type { get; set; }
-        public byte? Temperature { get; set; }
-        public byte? ColonizedLevel { get; set; }
+        public char? StarType { get; set; }
     }
 }

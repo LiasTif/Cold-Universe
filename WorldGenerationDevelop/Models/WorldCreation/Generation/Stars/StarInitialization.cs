@@ -21,7 +21,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Stars
             {
                 Name = NameGen.GenerateName(),
                 Description = starDescription.Text,
-                Type = starTypeGenerator.GetStarType()
+                StarType = starTypeGenerator.GetStarType()
             };
         }
     }

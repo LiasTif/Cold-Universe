@@ -55,12 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\WorldCreation\IAtmosphere.cs" />
     <Compile Include="Interfaces\WorldCreation\IBase.cs" />
+    <Compile Include="Interfaces\WorldCreation\IPlanetType.cs" />
     <Compile Include="Interfaces\WorldCreation\ISize.cs" />
     <Compile Include="Interfaces\WorldCreation\IColonizedLevel.cs" />
     <Compile Include="Interfaces\WorldCreation\ISuccessorIdsCollection.cs" />
     <Compile Include="Interfaces\WorldCreation\ITemperature.cs" />
-    <Compile Include="Interfaces\WorldCreation\IType.cs" />
     <Compile Include="Migrations\202211051237145_AddFiles.cs" />
     <Compile Include="Migrations\202211051237145_AddFiles.designer.cs">
       <DependentUpon>202211051237145_AddFiles.cs</DependentUpon>
@@ -89,10 +90,22 @@
     <Compile Include="Migrations\202211192033171_AddedDescriptionsTable.designer.cs">
       <DependentUpon>202211192033171_AddedDescriptionsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211221519505_UpdateObjectsAndInterfaceses.cs" />
+    <Compile Include="Migrations\202211221519505_UpdateObjectsAndInterfaceses.Designer.cs">
+      <DependentUpon>202211221519505_UpdateObjectsAndInterfaceses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211221853303_AddedAtmosphereTypeForSatellite.cs" />
+    <Compile Include="Migrations\202211221853303_AddedAtmosphereTypeForSatellite.designer.cs">
+      <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\Description.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Planets\PlanetInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Planets\PlanetMassGenerator.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTemperatureGenerator.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTypeGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Sectors\SectorInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Stars\StarInitialization.cs" />
@@ -104,16 +117,16 @@
     <Compile Include="Models\WorldCreation\NameGenerators\RandomNumber.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Volwels.cs" />
     <Compile Include="Models\WorldCreation\Objects\ParrentForSmallObjects.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Satellite.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Asteroid.cs" />
-    <Compile Include="Models\WorldCreation\Objects\AsteroidField.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Fleet.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Galaxy.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Planet.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Sector.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Star.cs" />
-    <Compile Include="Models\WorldCreation\Objects\StarSystem.cs" />
-    <Compile Include="Models\WorldCreation\Objects\Station.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Medium\Satellite.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Small\Asteroid.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Medium\AsteroidField.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Small\Fleet.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Big\Galaxy.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Medium\Planet.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Big\Sector.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Medium\Star.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Big\StarSystem.cs" />
+    <Compile Include="Models\WorldCreation\Objects\Small\Station.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +156,18 @@
     <EmbeddedResource Include="Migrations\202211192033171_AddedDescriptionsTable.resx">
       <DependentUpon>202211192033171_AddedDescriptionsTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211221519505_UpdateObjectsAndInterfaceses.resx">
+      <DependentUpon>202211221519505_UpdateObjectsAndInterfaceses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211221853303_AddedAtmosphereTypeForSatellite.resx">
+      <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\WorldCreation\Generation\AsteroidFields\" />
+    <Folder Include="Models\WorldCreation\Generation\Asteroids\" />
+    <Folder Include="Models\WorldCreation\Generation\Sattellites\" />
+    <Folder Include="Models\WorldCreation\Generation\Stations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

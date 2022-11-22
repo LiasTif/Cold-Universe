@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using WorldGenerationDevelop.Models;
+using WorldGenerationDevelop.Models.WorldCreation.Generation;
 
 namespace WorldGenerationDevelop
 {
@@ -20,6 +18,10 @@ namespace WorldGenerationDevelop
             //{
             //    starSystem.Description = starSystemDescription.Text;
             //}
+
+            Description planetDescrtiption = new Description { ObjectType = "Planet", Text = "Небесное тело, вращающееся вокруг звезды и получающее от него свет и тепло." };
+
+            context.Descriptions.Add(planetDescrtiption);
 
             context.SaveChanges();
 
