@@ -32,7 +32,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         /// </summary>
         public void GenerateWorld()
         {
-            using var context = new MyDbContext();
+            using var context = new DbContext();
 
             Galaxy galaxy = GalaxyInit.GalaxyInit();
 

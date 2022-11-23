@@ -11,6 +11,11 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         public string? Description { get; set; }
         #endregion
 
+        #region Parents
+        public int StarId { get; set; }
+        public virtual Star? Star { get; set; }
+        #endregion
+
         public byte? Size { get; set; }
     }
 }

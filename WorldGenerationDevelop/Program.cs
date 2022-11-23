@@ -7,7 +7,7 @@ namespace WorldGenerationDevelop
     {
         static void Main(string[] args)
         {
-            using var context = new MyDbContext();
+            using var context = new DbContext();
 
             //var galaxyDescription = context.Descriptions.SingleOrDefault(c => c.ObjectType == "Galaxy");
             //var sectorDescription = context.Descriptions.SingleOrDefault(c => c.ObjectType == "Sector");

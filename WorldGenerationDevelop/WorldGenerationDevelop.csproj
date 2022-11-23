@@ -98,7 +98,7 @@
       <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\Description.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetAtmosphereGenerator.cs" />

@@ -16,7 +16,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
         /// <returns>initialized planet</returns>
         public Planet PlanetInit(Star parentStar)
         {
-            using var context = new MyDbContext();
+            using var context = new DbContext();
             var planetDescription = context.Descriptions.SingleOrDefault(c => c.ObjectType == "Planet");
 
             // generate & save planet mass and atmosphere to the buffer

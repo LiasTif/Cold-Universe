@@ -14,7 +14,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Stars
         public Star StarInit(StarSystem parentStarSystem)
         {
             StarTypeGenerator starTypeGenerator = new StarTypeGenerator();
-            using var context = new MyDbContext();
+            using var context = new DbContext();
             var starDescription = context.Descriptions.SingleOrDefault(c => c.ObjectType == "Star");
 
             return new Star
