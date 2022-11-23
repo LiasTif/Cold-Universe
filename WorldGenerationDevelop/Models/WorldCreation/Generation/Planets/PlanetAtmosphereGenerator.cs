@@ -8,11 +8,11 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
         /// Get Planet atmosphere
         /// </summary>
         /// <returns>Planet atmosphere on bool</returns>
-        public bool GetPlanetTemperature()
+        public bool GetPlanetAtmosphere()
         {
-            RandomNumber randomNumber = new RandomNumber();
+            RandomNumber randomNum = new RandomNumber();
 
-            return randomNumber.GenRandomNum(1, 2) switch
+            return randomNum.GenRandomNum(1, 2) switch
             {
                 1 => true,
                 _ => false

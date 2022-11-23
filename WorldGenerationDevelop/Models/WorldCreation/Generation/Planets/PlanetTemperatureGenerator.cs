@@ -10,9 +10,9 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
         /// <returns>Planet temperature on char</returns>
         public string GetPlanetTemperature()
         {
-            RandomNumber randomNumber = new RandomNumber();
+            RandomNumber randomNum = new RandomNumber();
 
-            return randomNumber.GenRandomNum(1, 7) switch
+            return randomNum.GenRandomNum(1, 7) switch
             {
                 1 => "hot",
                 2 => "very warm",

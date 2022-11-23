@@ -1,6 +1,5 @@
 ﻿using System;
 using WorldGenerationDevelop.Models;
-using WorldGenerationDevelop.Models.WorldCreation.Generation;
 
 namespace WorldGenerationDevelop
 {
@@ -19,11 +18,10 @@ namespace WorldGenerationDevelop
             //    starSystem.Description = starSystemDescription.Text;
             //}
 
-            Description planetDescrtiption = new Description { ObjectType = "Planet", Text = "Небесное тело, вращающееся вокруг звезды и получающее от него свет и тепло." };
+            //context.Descriptions.Remove(context.Descriptions.Find(5));
+            //Description planetDescrtiption = new Description { ObjectType = "Planet", Text = "  Небесное тело, вращающееся вокруг звезды и получающее от него свет и тепло." };
 
-            context.Descriptions.Add(planetDescrtiption);
-
-            context.SaveChanges();
+            //context.Descriptions.Add(planetDescrtiption);
 
             Console.WriteLine("Opertation has ended");
             Console.ReadKey();

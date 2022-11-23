@@ -1,4 +1,5 @@
 ﻿#nullable enable
+using System.Collections.Generic;
 using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
@@ -14,6 +15,10 @@ namespace WorldGenerationDevelop.Models.WorldCreation
         #region Parent
         public int GalaxyId { get; set; }
         public virtual Galaxy? Galaxy { get; set; }
+        #endregion
+
+        #region Child objects
+        public virtual ICollection<StarSystem>? StarSystemsId { get; set; }
         #endregion
     }
 }

@@ -15,5 +15,6 @@ namespace WorldGenerationDevelop.Models
         public DbSet<StarSystem> StarSystems { get; set; }
         public DbSet<Star> Stars { get; set; }
         public DbSet<Description> Descriptions { get; set; }
+        public DbSet<Planet> Planets { get; set; }
     }
 }

@@ -59,7 +59,6 @@
     <Compile Include="Interfaces\WorldCreation\IBase.cs" />
     <Compile Include="Interfaces\WorldCreation\IPlanetType.cs" />
     <Compile Include="Interfaces\WorldCreation\ISize.cs" />
-    <Compile Include="Interfaces\WorldCreation\IColonizedLevel.cs" />
     <Compile Include="Interfaces\WorldCreation\ISuccessorIdsCollection.cs" />
     <Compile Include="Interfaces\WorldCreation\ITemperature.cs" />
     <Compile Include="Migrations\202211051237145_AddFiles.cs" />
@@ -102,6 +101,7 @@
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\Description.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Planets\PlanetAtmosphereGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetMassGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTemperatureGenerator.cs" />

@@ -5,8 +5,9 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
     public class PlanetInitialization
     {
         private NameGenerator NameGen { get; } = new NameGenerator();
-        private PlanetTypeGenerator PlanetTypeGen { get; } = new PlanetTypeGenerator();
-        private PlanetMassGenerator PlanetMassGen { get; } = new PlanetMassGenerator();
+        private PlanetTypeGenerator TypeGen { get; } = new PlanetTypeGenerator();
+        private PlanetMassGenerator MassGen { get; } = new PlanetMassGenerator();
+        private PlanetAtmosphereGenerator AtmosphereGen { get; } = new PlanetAtmosphereGenerator();
 
         /// <summary>
         /// generate planet
@@ -18,18 +19,19 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
             using var context = new MyDbContext();
             var planetDescription = context.Descriptions.SingleOrDefault(c => c.ObjectType == "Planet");
 
-            // generate & save planet mass to the buffer
-            string mass = PlanetMassGen.GetPlanetMass();
+            // generate & save planet mass and atmosphere to the buffer
+            string mass = MassGen.GetPlanetMass();
+            bool atmosphere = AtmosphereGen.GetPlanetAtmosphere();
 
             return new Planet
             {
                 Name = NameGen.GenerateName(),
                 Description = planetDescription.Text,
-                // use planet mass buffer
+                
+                // use planet mass and atmosphere buffer
                 Mass = mass,
-                PlanetType = PlanetTypeGen.GetPlanetType(mass),
-
-                AtmosphereType = 
+                AtmosphereType = atmosphere,
+                PlanetType = TypeGen.GetPlanetType(mass, atmosphere)
             };
         }
     }

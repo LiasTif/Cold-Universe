@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Galaxies;
+using WorldGenerationDevelop.Models.WorldCreation.Generation.Planets;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Sectors;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.Stars;
 using WorldGenerationDevelop.Models.WorldCreation.Generation.StarSystems;
+using WorldGenerationDevelop.Models.WorldCreation.NameGenerators;
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation
 {
@@ -13,7 +15,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         private GalaxyInitialization GalaxyInit { get; } = new GalaxyInitialization();
         private SectorInitialization SectorInit { get; } = new SectorInitialization();
         private StarSystemInitialization StarSystemInit { get; } = new StarSystemInitialization();
-        private StarInitialization StarInitialization { get;  } = new StarInitialization();
+        private StarInitialization StarInit { get;  } = new StarInitialization();
+        private PlanetInitialization PlanetInit { get; } = new PlanetInitialization();
 
         /// <summary>
         /// numerical indicator of the size of the galaxy
@@ -21,6 +24,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         public int SizeOfGalaxy { private get; set; } = 1;
 
         #endregion
+
+        readonly RandomNumber randomNum = new RandomNumber();
 
         /// <summary>
         /// start generation
@@ -34,6 +39,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
             var sectors = new List<Sector>();
             var starSystems = new List<StarSystem>();
             var stars = new List<Star>();
+            var planets = new List<Planet>();
 
             for (int S = 0; S < SizeOfGalaxy * 5; S++)
             {
@@ -48,10 +54,15 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
                     starSystems.Add(starSystem);
 
                     // generate star and add it to DbContext
-                    Star star = StarInitialization.StarInit(starSystem);
+                    Star star = StarInit.StarInit(starSystem);
                     stars.Add(star);
 
-
+                    for (int p = 0; p < randomNum.GenRandomNum(0,8); p++)
+                    {
+                        // generate planet and add it to DbContext
+                        Planet planet = PlanetInit.PlanetInit(star);
+                        planets.Add(planet);
+                    }
                 }
             }
 
@@ -59,6 +70,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
             context.Sectors.AddRange(sectors);
             context.StarSystems.AddRange(starSystems);
             context.Stars.AddRange(stars);
+            context.Planets.AddRange(planets);
 
             context.SaveChanges();
         }

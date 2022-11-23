@@ -10,9 +10,9 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
         /// <returns>Planet mass on string</returns>
         public string GetPlanetMass()
         {
-            RandomNumber randomNumber = new RandomNumber();
+            RandomNumber randomNum = new RandomNumber();
 
-            return randomNumber.GenRandomNum(1, 4) switch
+            return randomNum.GenRandomNum(1, 4) switch
             {
                 1 => "earth type",
                 2 => "giant",
