@@ -99,6 +99,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbContext.cs" />
+    <Compile Include="Models\WorldCreation\Generation\AsteroidFields\AsteroidFieldInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\AsteroidFields\AsteroidFieldSizeGenerator.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Asteroids\AsteroidInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Asteroids\AsteroidSizeGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Description.cs" />
     <Compile Include="Models\WorldCreation\Generation\Galaxies\GalaxyInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetAtmosphereGenerator.cs" />
@@ -106,11 +110,15 @@
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetMassGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTemperatureGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTypeGenerator.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Sattellites\SatelliteInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Sectors\SectorInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Stars\StarInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Stars\StarTypeGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\StartGen.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Stations\StationInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Stations\StationSizeGenerator.cs" />
+    <Compile Include="Models\WorldCreation\Generation\Stations\StationTypeGenerator.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Consonants.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\Diagraph.cs" />
     <Compile Include="Models\WorldCreation\NameGenerators\NameGenerator.cs" />
@@ -163,12 +171,7 @@
       <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\WorldCreation\Generation\AsteroidFields\" />
-    <Folder Include="Models\WorldCreation\Generation\Asteroids\" />
-    <Folder Include="Models\WorldCreation\Generation\Sattellites\" />
-    <Folder Include="Models\WorldCreation\Generation\Stations\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

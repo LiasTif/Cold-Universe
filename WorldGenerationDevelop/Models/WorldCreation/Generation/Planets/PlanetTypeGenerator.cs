@@ -1,4 +1,5 @@
-﻿using WorldGenerationDevelop.Models.WorldCreation.NameGenerators;
+﻿using System;
+using WorldGenerationDevelop.Models.WorldCreation.NameGenerators;
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
 {
@@ -75,6 +76,11 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
                 2 => "wasteland",
                 _ => "ERROR"
             };
+        }
+
+        public static implicit operator PlanetTypeGenerator(PlanetAtmosphereGenerator v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

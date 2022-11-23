@@ -2,12 +2,16 @@
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
 {
+    /// <summary>
+    /// initialize the planet
+    /// </summary>
     public class PlanetInitialization
     {
         private NameGenerator NameGen { get; } = new NameGenerator();
         private PlanetTypeGenerator TypeGen { get; } = new PlanetTypeGenerator();
         private PlanetMassGenerator MassGen { get; } = new PlanetMassGenerator();
         private PlanetAtmosphereGenerator AtmosphereGen { get; } = new PlanetAtmosphereGenerator();
+        private PlanetTemperatureGenerator TemperatureGen { get; } = new PlanetTemperatureGenerator();
 
         /// <summary>
         /// generate planet
@@ -27,7 +31,10 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Planets
             {
                 Name = NameGen.GenerateName(),
                 Description = planetDescription.Text,
-                
+                Temperature = TemperatureGen.GetPlanetTemperature(),
+                Star = parentStar,
+                StarId = parentStar.Id,
+
                 // use planet mass and atmosphere buffer
                 Mass = mass,
                 AtmosphereType = atmosphere,

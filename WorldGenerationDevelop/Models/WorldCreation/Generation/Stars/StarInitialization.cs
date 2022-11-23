@@ -2,6 +2,9 @@
 
 namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Stars
 {
+    /// <summary>
+    /// initialize the star
+    /// </summary>
     public class StarInitialization
     {
         private NameGenerator NameGen { get; } = new NameGenerator();
@@ -21,7 +24,9 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation.Stars
             {
                 Name = NameGen.GenerateName(),
                 Description = starDescription.Text,
-                StarType = starTypeGenerator.GetStarType()
+                StarType = starTypeGenerator.GetStarType(),
+                StarSystem = parentStarSystem,
+                StarSystemId = parentStarSystem.Id
             };
         }
     }
