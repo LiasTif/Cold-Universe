@@ -2,6 +2,6 @@
 {
     public interface IAtmosphereType
     {
-        public bool? AtmosphereType { get; set; }
+        public bool AtmosphereType { get; set; }
     }
 }

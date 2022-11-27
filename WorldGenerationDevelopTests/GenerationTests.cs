@@ -8,8 +8,8 @@ namespace WorldGenerationDevelopTests
         [Fact]
         public void StartGeneration_DbTables_NANReturned()
         {
-            GalaxyInitialization galaxyInit = new();
-            SectorInitialization sectorInit = new();
+            //GalaxyInitialization galaxyInit = new();
+            //SectorInitialization sectorInit = new();
 
             //Assert.NotNull(galaxyAccess.GetGalaxy(0));
             //Assert.NotNull(sectorInit.GetStarSystem(0));

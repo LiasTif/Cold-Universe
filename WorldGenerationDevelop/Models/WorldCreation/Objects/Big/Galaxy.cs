@@ -1,5 +1,6 @@
-﻿#nullable enable
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
@@ -8,12 +9,13 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     {
         #region Base
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         #endregion
 
         #region Child objects
-        public virtual ICollection<Sector>? SectorsId { get; set; }
+        [ForeignKey("Id")]
+        public virtual ICollection<Sector> Sectors { get; set; }
         #endregion
     }
 }

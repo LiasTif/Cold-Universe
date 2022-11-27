@@ -1,8 +1,7 @@
-﻿#nullable enable
-namespace WorldGenerationDevelop.Interfaces.WorldCreation
+﻿namespace WorldGenerationDevelop.Interfaces.WorldCreation
 {
     public interface IPlanetType
     {
-        public string? PlanetType { get; set; }
+        public string PlanetType { get; set; }
     }
 }

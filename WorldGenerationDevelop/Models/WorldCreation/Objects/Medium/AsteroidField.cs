@@ -1,5 +1,4 @@
-﻿#nullable enable
-using WorldGenerationDevelop.Interfaces.WorldCreation;
+﻿using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
 {
@@ -7,15 +6,15 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     {
         #region Base
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         #endregion
 
         #region Parents
         public int StarId { get; set; }
-        public virtual Star? Star { get; set; }
+        public virtual Star Star { get; set; }
         #endregion
 
-        public byte? Size { get; set; }
+        public byte Size { get; set; }
     }
 }

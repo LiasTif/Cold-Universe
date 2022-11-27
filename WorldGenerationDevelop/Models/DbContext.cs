@@ -25,6 +25,7 @@ namespace WorldGenerationDevelop.Models
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
+
             modelBuilder.Entity<Planet>()
                 .HasRequired(c => c.StarSystem)
                 .WithMany()
@@ -33,31 +34,38 @@ namespace WorldGenerationDevelop.Models
                 .HasRequired(c => c.Star)
                 .WithMany()
                 .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Planet>()
-                .HasRequired(c => c.SatellitesId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Planet>()
-                .HasRequired(c => c.FleetsId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Planet>()
-                .HasRequired(c => c.AsteroidsId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<Planet>()
-                .HasRequired(c => c.StationsId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<StarSystem>()
-                .HasRequired(c => c.PlanetsId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-            modelBuilder.Entity<StarSystem>()
-                .HasRequired(c => c.StarsId)
-                .WithMany()
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Planet>()
+            //    .HasRequired(c => c.SatellitesId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Planet>()
+            //    .HasRequired(c => c.FleetsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Planet>()
+            //    .HasRequired(c => c.AsteroidsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Planet>()
+            //    .HasRequired(c => c.StationsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<StarSystem>()
+            //    .HasRequired(c => c.PlanetsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<StarSystem>()
+            //    .HasRequired(c => c.StarsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+
+            //modelBuilder.Entity<Star>()
+            //    .HasRequired(c => c.PlanetsId)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
         }
 
         public DbSet<Galaxy> Galaxies { get; set; }

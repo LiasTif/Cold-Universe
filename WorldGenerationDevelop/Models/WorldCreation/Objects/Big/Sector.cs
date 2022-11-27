@@ -1,5 +1,5 @@
-﻿#nullable enable
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using WorldGenerationDevelop.Interfaces.WorldCreation;
 
 namespace WorldGenerationDevelop.Models.WorldCreation
@@ -8,17 +8,18 @@ namespace WorldGenerationDevelop.Models.WorldCreation
     {
         #region Base
         public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         #endregion
 
         #region Parent
         public int GalaxyId { get; set; }
-        public virtual Galaxy? Galaxy { get; set; }
+        public virtual Galaxy Galaxy { get; set; }
         #endregion
 
         #region Child objects
-        public virtual ICollection<StarSystem>? StarSystemsId { get; set; }
+        [ForeignKey("Id")]
+        public virtual ICollection<StarSystem> StarSystems { get; set; }
         #endregion
     }
 }

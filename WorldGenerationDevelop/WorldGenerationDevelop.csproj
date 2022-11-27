@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202211221853303_AddedAtmosphereTypeForSatellite.designer.cs">
       <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211271841399_UpdateObjectsAddedNullableParents.cs" />
+    <Compile Include="Migrations\202211271841399_UpdateObjectsAddedNullableParents.designer.cs">
+      <DependentUpon>202211271841399_UpdateObjectsAddedNullableParents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\WorldCreation\Generation\AsteroidFields\AsteroidFieldInitialization.cs" />
@@ -170,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211221853303_AddedAtmosphereTypeForSatellite.resx">
       <DependentUpon>202211221853303_AddedAtmosphereTypeForSatellite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211271841399_UpdateObjectsAddedNullableParents.resx">
+      <DependentUpon>202211271841399_UpdateObjectsAddedNullableParents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
