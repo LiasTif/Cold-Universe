@@ -112,6 +112,7 @@
     <Compile Include="Models\WorldCreation\Generation\Planets\PlanetTypeGenerator.cs" />
     <Compile Include="Models\WorldCreation\Generation\Sattellites\SatelliteInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Sectors\SectorInitialization.cs" />
+    <Compile Include="Models\WorldCreation\Generation\SmallObjectsGeneration.cs" />
     <Compile Include="Models\WorldCreation\Generation\StarSystems\StarSystemInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Stars\StarInitialization.cs" />
     <Compile Include="Models\WorldCreation\Generation\Stars\StarTypeGenerator.cs" />

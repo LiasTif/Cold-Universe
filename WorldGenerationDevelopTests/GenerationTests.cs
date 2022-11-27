@@ -9,7 +9,6 @@ namespace WorldGenerationDevelopTests
         public void StartGeneration_DbTables_NANReturned()
         {
             GalaxyInitialization galaxyInit = new();
-            GalaxyAccess galaxyAccess = new();
             SectorInitialization sectorInit = new();
 
             //Assert.NotNull(galaxyAccess.GetGalaxy(0));

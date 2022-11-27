@@ -23,8 +23,7 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         private PlanetInitialization PlanetInit { get; } = new PlanetInitialization();
         private SatelliteInitialization SatelliteInit { get; } = new SatelliteInitialization();
         private AsteroidFieldInitialization AsteroidFieldInit { get; } = new AsteroidFieldInitialization();
-        private AsteroidInitialization AsteroidInit { get; } = new AsteroidInitialization();
-        private StationInitialization StationInit { get; } = new StationInitialization();
+        private SmallObjectsGeneration SmallObjectsGen { get; } = new SmallObjectsGeneration();
 
         /// <summary>
         /// numerical indicator of the size of the galaxy
@@ -42,8 +41,6 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
         {
             using var context = new DbContext();
 
-            Galaxy galaxy = GalaxyInit.GalaxyInit();
-
             // create Lists for storing objects
             var sectors = new List<Sector>();
             var starSystems = new List<StarSystem>();
@@ -54,12 +51,17 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
             var asteroids = new List<Asteroid>();
             var stations = new List<Station>();
 
+            // start generation
+            // generate galaxy
+            Galaxy galaxy = GalaxyInit.GalaxyInit();
+
             for (int S = 0; S < SizeOfGalaxy * 5; S++)
             {
                 // generate sectors and add its to List
                 Sector sector = SectorInit.SectorInit(galaxy);
                 sectors.Add(sector);
 
+                // star systems
                 for (int ss = 0; ss < SizeOfGalaxy * 5; ss++)
                 {
                     // generate star systems and add its to List
@@ -70,6 +72,8 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
                     Star star = StarInit.StarInit(starSystem);
                     stars.Add(star);
 
+                    SmallObjectsGen.GenerateSmallObjects(star, ref asteroids, ref stations, 0, 6, true);
+
                     // chanse to generate the asteroid field
                     if (randomNum.GenRandomNum(0,2) == 2)
                     {
@@ -78,17 +82,23 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
                         asteroidFields.Add(asteroidField);
                     }
 
+                    // planets
                     for (int p = 0; p < randomNum.GenRandomNum(0, 8); p++)
                     {
                         // generate planet and add it to List
                         Planet planet = PlanetInit.PlanetInit(star);
                         planets.Add(planet);
 
-                        for(int s = 0; s < randomNum.GenRandomNum(0, 5); s++)
+                        SmallObjectsGen.GenerateSmallObjects(planet, ref asteroids, ref stations, 2, 4, true);
+
+                        // satellites
+                        for (int s = 0; s < randomNum.GenRandomNum(0, 5); s++)
                         {
                             // generate sattelite and add it to List
                             Satellite satellite = SatelliteInit.SatelliteInit(planet);
                             satellites.Add(satellite);
+
+                            SmallObjectsGen.GenerateSmallObjects(satellite, ref asteroids, ref stations, 1, 2, true);
                         }
                     }
                 }
@@ -104,51 +114,6 @@ namespace WorldGenerationDevelop.Models.WorldCreation.Generation
             context.AsteroidFields.AddRange(asteroidFields);
 
             context.SaveChanges();
-        }
-
-        /// <summary>
-        /// Generate small child objects(asteroids and stations) for Star
-        /// </summary>
-        /// <param name="parentStar"></param>
-        private void GenerateSmallObjects(Star parentStar,
-            ref List<Asteroid> asteroids, ref List<Station> stations)
-        {
-            // generate asteroids and stations and add its to the List
-            Asteroid asteroid = AsteroidInit.AsteroidInit(parentStar);
-            asteroids.Add(asteroid);
-
-            Station station = StationInit.StationInit(parentStar);
-            stations.Add(station);
-        }
-
-        /// <summary>
-        /// Generate small child objects(asteroids and stations) for Planet
-        /// </summary>
-        /// <param name="parentPlanet"></param>
-        private void GenerateSmallObjects(Planet parentPlanet,
-            ref List<Asteroid> asteroids, ref List<Station> stations)
-        {
-            // generate asteroids and stations and add its to the List
-            Asteroid asteroid = AsteroidInit.AsteroidInit(parentPlanet);
-            asteroids.Add(asteroid);
-
-            Station station = StationInit.StationInit(parentPlanet);
-            stations.Add(station);
-        }
-
-        /// <summary>
-        /// Generate small child objects(asteroids and stations) for Satellite
-        /// </summary>
-        /// <param name="parentSatellite"></param>
-        private void GenerateSmallObjects(Satellite parentSatellite,
-            ref List<Asteroid> asteroids, ref List<Station> stations)
-        {
-            // generate asteroids and stations and add its to the List
-            Asteroid asteroid = AsteroidInit.AsteroidInit(parentSatellite);
-            asteroids.Add(asteroid);
-
-            Station station = StationInit.StationInit(parentSatellite);
-            stations.Add(station);
         }
     }
 }
